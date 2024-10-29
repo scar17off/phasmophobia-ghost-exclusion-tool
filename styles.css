@@ -1,114 +1,163 @@
+
+:root {
+    --background-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --container-bg: #2a2a2a;
+    --border-color: #444;
+    --included-bg: #2c5e2e;
+    --included-border: #4caf50;
+    --excluded-bg: #5e2c2c;
+    --excluded-border: #af4c4c;
+    --ghost-possible-bg: #333;
+    --ghost-impossible-bg: rgba(255, 255, 255, 0.1);
+    --ghost-impossible-text: #666;
+}
+
+
+.light-theme {
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --container-bg: #ffffff;
+    --border-color: #ccc;
+    --included-bg: #d4edda;
+    --included-border: #28a745;
+    --excluded-bg: #f8d7da;
+    --excluded-border: #dc3545;
+    --ghost-possible-bg: #eaeaea;
+    --ghost-impossible-bg: #d3d3d3;
+    --ghost-impossible-text: #888;
+}
+
 body {
-	font-family: Arial, sans-serif;
-	line-height: 1.6;
-	margin: 0;
-	padding: 0;
-	background-color: #1a1a1a;
-	color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .container {
-	width: 90%;
-	margin: auto;
-	overflow: hidden;
-	padding: 20px;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
 }
 
-h1,
-h2 {
-	color: #ffffff;
+h1, h2 {
+    color: var(--text-color);
 }
 
 .main-content {
-	display: flex;
-	gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .left-panel {
-	flex: 3;
+    flex: 3;
 }
 
 .right-panel {
-	flex: 1;
+    flex: 1;
 }
 
-.evidence-section,
-.ghost-section,
-.right-panel {
-	background: #2a2a2a;
-	margin-bottom: 20px;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.evidence-section, .ghost-section, .right-panel {
+    background: var(--container-bg);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-#evidence-list,
-#ghost-list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 10px;
+#evidence-list, #ghost-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.evidence-item,
-.ghost-item {
-	padding: 10px;
-	border: 1px solid #444;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	background-color: #333;
-	color: #e0e0e0;
+.evidence-item, .ghost-item {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--ghost-possible-bg);
+    color: var(--text-color);
 }
 
 .evidence-item.included {
-	background-color: #2c5e2e;
-	border-color: #4caf50;
+    background-color: var(--included-bg);
+    border-color: var(--included-border);
 }
 
 .evidence-item.excluded {
-	background-color: #5e2c2c;
-	border-color: #af4c4c;
-	text-decoration: line-through;
+    background-color: var(--excluded-bg);
+    border-color: var(--excluded-border);
+    text-decoration: line-through;
 }
 
 .ghost-item.possible {
-	background-color: #333;
+    background-color: var(--ghost-possible-bg);
 }
 
 .ghost-item.impossible {
-	background-color: rgba(255, 255, 255, 0.1);
-	color: #666;
+    background-color: var(--ghost-impossible-bg);
+    color: var(--ghost-impossible-text);
 }
 
 .behavior-options {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .behavior-options label {
-	display: flex;
-	align-items: center;
-	gap: 5px;
-	cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
 }
 
 .behavior-options input[type="checkbox"] {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .input-textbox {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .input-textbox input {
-	width: 60px;
-	padding: 5px;
-	border: 1px solid #444;
-	border-radius: 3px;
-	background-color: #333;
-	color: #e0e0e0;
+    width: 60px;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    background-color: var(--ghost-possible-bg);
+    color: var(--text-color);
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+}
+
+
+#theme-toggle {
+	padding: 8px 16px;
+	font-size: 14px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: var(--container-bg);
+	color: var(--text-color);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#theme-toggle:hover {
+	background-color: var(--text-color);
+	color: var(--background-color);
 }

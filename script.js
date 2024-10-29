@@ -175,6 +175,20 @@ function initializeBehaviorOptions() {
 	});
 }
 
+const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const themeToggleBtn = document.getElementById('theme-toggle');
+
+if (userPrefersDark) {
+    document.body.classList.remove('light-theme');
+} else {
+    document.body.classList.add('light-theme');
+}
+
+
+themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 	initializeEvidenceList();
 	initializeGhostList();
