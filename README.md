@@ -32,7 +32,7 @@ This is a web-based tool designed to help Phasmophobia players identify and excl
 
 ## Contributing 🤝
 
-We welcome contributions to improve the tool's functionality and user experience. Please see our CONTRIBUTING.md for guidelines on how to submit improvements. 🛠️
+We welcome contributions to improve the tool's functionality and user experience. Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to submit improvements. 🛠️
 
 ## License 📜
 
