@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Phasmophobia Ghost Exclusion Tool</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Phasmophobia Ghost Exclusion Tool</h1>
+
+		<div class="main-content">
+			<div class="left-panel">
+				<div class="evidence-section">
+					<h2>Evidence</h2>
+					<div id="evidence-list"></div>
+				</div>
+
+				<div class="ghost-section">
+					<h2>Ghosts</h2>
+					<div id="ghost-list"></div>
+				</div>
+			</div>
+
+			<div class="right-panel">
+				<h2>Ghost Behavior</h2>
+				<div class="behavior-options">
+					<label>
+						<input type="checkbox" id="airball-event"> Ghost made Airball event (excludes Oni)
+					</label>
+					<label>
+						<input type="checkbox" id="no-light-off"> Does not turn off the light
+					</label>
+					<label>
+						<input type="checkbox" id="no-speed-increase"> Does not increase speed in line of sight
+					</label>
+					<div class="input-textbox">
+						<label for="hunt-sanity-input">Hunt sanity:</label>
+						<input type="number" id="hunt-sanity-input" min="0" max="100" step="1">
+					</div>
+					<div class="input-textbox">
+						<label for="current-sanity-input">Current sanity:</label>
+						<input type="number" id="current-sanity-input" min="0" max="100" step="1">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
